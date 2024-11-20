@@ -27,6 +27,15 @@ public class principal {
         //SUMA DE LOS DIGITOS DE UN NUMERO
         System.out.println("Suma de dígitos de 1234");
         System.out.println(digitos(1234));
+        
+        
+        ListaV A=new ListaV();
+        A.adicion("aaa111", "Fiat", "Blanco", 2020);
+        A.adicion("bbb222", "toyota", "negro", 2010);
+        A.adicion("ccc333", "nissan", "verde", 2022);
+        A.adicion("ddd444", "chevrolet", "azul", 2015);
+        A.adicion("eee555", "nissan", "Blanco", 2021);
+        mostrar(A.getP());
     }
 
     public static int factorial(int x) {
@@ -66,6 +75,15 @@ public class principal {
             return n % 10 + digitos(n / 10);
         } else {
             return n;
+        }
+    }
+    
+    public static void mostrar(NodoV r){
+        if(r!=null){
+            System.out.println(r.getPlaca()+" - "+r.getMarca()+" - "+r.getModelo()+" - "+r.getColor());
+            mostrar(r.getSig());
+        }else{
+            return;
         }
     }
 }
